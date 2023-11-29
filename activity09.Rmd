@@ -2,6 +2,9 @@
 title: "Analysis of STAT184 Topics"
 author: "Eric Best"
 date: "2023-11-29"
+output:
+  html_document:
+    df_print: paged
 ---
 
 ```{r Chunk0: Portability, echo = FALSE, error = FALSE, warning = FALSE, message = FALSE}
@@ -17,7 +20,7 @@ groundhog.library(pkgs, groundhog.day)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
 csv_path <- here("diamonds.csv")
 diamonds <- read.csv(csv_path)
-devtools::install_github("kupietz/kableExtra")
+##devtools::install_github("kupietz/kableExtra")
 ```
 
 ### Foreword
@@ -276,12 +279,10 @@ Activity #05 was the most important for learning to code visualizations, specifi
 
 In the past few weeks of class, we've examined R Markdown. RMD allows us to create reports and presentations that include code, text, mathematical symbols, tables, and visualizations. I can see how this has become the standard for creating scholarly documents. It is a very clean system that helps us organize our work much better and expedites the creation of document files. I appreciate that code chunks can have localized properties, such as specifying a table name or instructing R not to print error and warning messages. Suffice to say, I will be using RMD for report management over word processors.
 
-\newpage
-
 ### Code Appendix
 
 We have reproduced our code here as a reference.
 
-```{r codeAppendix, ref.label = knitr::all_labels(), echo = TRUE}
+```{r codeAppendix, ref.label = knitr::all_labels(), echo = TRUE, fig.show = 'hide', results='hide'}
 
 ```
