@@ -12,10 +12,11 @@ output: pdf_document
 ## Diamonds was obtained from: https://github.com/tidyverse/ggplot2/blob/main/data-raw/diamonds.csv
 
 library(groundhog)
-groundhog.day="2023-11-26"
+groundhog.day="2023-11-20"
 pkgs=c('janitor','dplyr','kableExtra', 'ggplot2', 'here', 'tinytex')
 groundhog.library(pkgs, groundhog.day)
-knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+##tinytex::install_tinytex(force = TRUE)
 csv_path <- here("diamonds.csv")
 diamonds <- read.csv(csv_path)
 ##devtools::install_github("kupietz/kableExtra")

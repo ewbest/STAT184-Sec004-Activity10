@@ -519,10 +519,11 @@ We have reproduced our code here as a reference.
 \DocumentationTok{\#\# Diamonds was obtained from: https://github.com/tidyverse/ggplot2/blob/main/data{-}raw/diamonds.csv}
 
 \FunctionTok{library}\NormalTok{(groundhog)}
-\NormalTok{groundhog.day}\OtherTok{=}\StringTok{"2023{-}11{-}26"}
+\NormalTok{groundhog.day}\OtherTok{=}\StringTok{"2023{-}11{-}20"}
 \NormalTok{pkgs}\OtherTok{=}\FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}janitor\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}dplyr\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}kableExtra\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}ggplot2\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}here\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}tinytex\textquotesingle{}}\NormalTok{)}
 \FunctionTok{groundhog.library}\NormalTok{(pkgs, groundhog.day)}
-\NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{warning =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{message =} \ConstantTok{FALSE}\NormalTok{) }
+\NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{warning =} \ConstantTok{FALSE}\NormalTok{, }\AttributeTok{message =} \ConstantTok{FALSE}\NormalTok{)}
+\DocumentationTok{\#\#tinytex::install\_tinytex(force = TRUE)}
 \NormalTok{csv\_path }\OtherTok{\textless{}{-}} \FunctionTok{here}\NormalTok{(}\StringTok{"diamonds.csv"}\NormalTok{)}
 \NormalTok{diamonds }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(csv\_path)}
 \DocumentationTok{\#\#devtools::install\_github("kupietz/kableExtra")}
