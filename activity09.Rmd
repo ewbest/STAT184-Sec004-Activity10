@@ -1,13 +1,33 @@
 ---
 title: "Analysis of STAT184 Topics"
 author: "Eric Best"
-date: "2023-11-02"
-output: 
+date: "2023-11-29"
+output:
   pdf_document: default
+  word_document: default
   html_document: default
+knitr:
+  echo: no
+  messsage: no
+  warning: no
 ---
 
-### Foreward
+```{r Chunk0: Portability}
+## This chunk's code was included to provide portability to different systems.
+## We are using groundhog to load packages from a specific date.
+## We are then using 'here' to load the ggplot2 dataset called diamonds.csv
+## Diamonds was obtained from: https://github.com/tidyverse/ggplot2/blob/main/data-raw/diamonds.csv
+
+library(groundhog)
+groundhog.day="2023-11-26"
+pkgs=c('janitor','dplyr','kableExtra', 'ggplot2', 'here')
+groundhog.library(pkgs, groundhog.day)
+
+csv_path <- here("diamonds.csv")
+diamonds <- read.csv(csv_path)
+```
+
+### Foreword
 
 In this document, we will examine some code, datasets, and visualizations related to STAT184. There are three sections: a discussion on the Collaz Conjecture, an investigation on the physical properties of Diamonds, and a summary of what we have learned in STAT184 so far.
 
@@ -28,15 +48,9 @@ $$
 
 #### Coding the Conjecture
 
-We've made R Code for a recursive implementation of the Conjecture. That is, the function will repeatedly call itself to eventually reduce $n$ to 1. Included is code to record the "Stopping Points", which are positive integers that state how many times the function is run to reduce $n$ to 1.
+We've made R Code for a recursive implementation of the Conjecture. That is, the function will repeatedly call itself to eventually reduce $n$ to 1. We will record the "Stopping Points", which are positive integers that state how many times the function is run to reduce $n$ to 1.
 
 ```{r Chunk1: CollatzCode}
-library(groundhog)
-
-groundhog.day="2023-11-20"
-pkgs=c('janitor','dplyr','kableExtra', 'ggplot2')
-groundhog.library(pkgs, groundhog.day)
-
 ## We are including this code to demonstrate how the Collatz Conjecture works.
 
 ## Function accepts a positive integer n
@@ -119,7 +133,7 @@ How might these properties influence the price of a diamond? We will investigate
 
 Shown below are dot plots that include 100 cases from the Diamonds dataset, with the first (Fig. 1) concerning color and the second (Fig. 2) regarding cut:
 
-```{r Chunk3: diamondsDotPlot1, message=FALSE, warning=FALSE}
+```{r Chunk3: diamondsDotPlot1}
 ## This code was included to show a dot plot of 100 diamonds and the relationship between prices, carat, and color
 
 library(ggplot2)
@@ -133,7 +147,7 @@ theme_minimal()
 
 ```
 
-```{r Chunk4: diamondsDotPlot2, message=FALSE, warning=FALSE}
+```{r Chunk4: diamondsDotPlot2}
 ## This code was included to show a dot plot of 100 diamonds and the relationship between prices, carat, and cut
 
 library(ggplot2)
@@ -160,14 +174,8 @@ First of all, let's discuss the Color and Cut properties. The less color, the hi
 
 We will now use a table to display summary statistics about the Diamonds dataset. This will allow us to examine many more cases compared to the above visualizations. We'll consider the $x$ values for the diamonds in these calculations.
 
-```{r Chunk5: diamondsSummary, message=FALSE, warning=FALSE}
+```{r Chunk5: diamondsSummary}
 ## This code was included to tidy up and display a table regarding the diamonds' physical properties
-library(groundhog)
-
-groundhog.day="2023-11-26"
-pkgs=c('janitor','dplyr','kableExtra', 'ggplot2')
-groundhog.library(pkgs, groundhog.day)
-data(diamonds)
 
 ##################
 ##Data Wrangling##
@@ -274,3 +282,10 @@ Activity #05 was the most important for learning to code visualizations, specifi
 #### Tying it All Together
 
 In the past few weeks of class, we've examined R Markdown. RMD allows us to create reports and presentations that include code, text, mathematical symbols, tables, and visualizations. I can see how this has become the standard for creating scholarly documents. It is a very clean system that helps us organize our work much better and expedites the creation of document files. I appreciate that code chunks can have localized properties, such as specifying a table name or instructing R not to print error and warning messages. Suffice to say, I will be using RMD for report management over word processors.
+
+\newpage
+### Code Appendix
+We have reproduced our code here as a reference.
+``` {r codeAppendix, ref.label = knitr::all_labels(), echo = TRUE}
+
+```
