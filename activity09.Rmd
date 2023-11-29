@@ -2,9 +2,7 @@
 title: "Analysis of STAT184 Topics"
 author: "Eric Best"
 date: "2023-11-29"
-output:
-  html_document:
-    df_print: paged
+output: pdf_document
 ---
 
 ```{r Chunk0: Portability, echo = FALSE, error = FALSE, warning = FALSE, message = FALSE}
@@ -15,7 +13,7 @@ output:
 
 library(groundhog)
 groundhog.day="2023-11-26"
-pkgs=c('janitor','dplyr','kableExtra', 'ggplot2', 'here')
+pkgs=c('janitor','dplyr','kableExtra', 'ggplot2', 'here', 'tinytex')
 groundhog.library(pkgs, groundhog.day)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
 csv_path <- here("diamonds.csv")
