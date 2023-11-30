@@ -17,10 +17,8 @@ groundhog.day="2023-11-20"
 pkgs=c('janitor','dplyr','kableExtra', 'ggplot2', 'here')
 groundhog.library(pkgs, groundhog.day)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
-##tinytex::install_tinytex(force = TRUE)
 csv_path <- here("diamonds.csv")
 diamonds <- read.csv(csv_path)
-##devtools::install_github("kupietz/kableExtra")
 
 ```
 
@@ -47,7 +45,7 @@ $$
 
 We've made R Code for a recursive implementation of the Conjecture. That is, the function will repeatedly call itself to eventually reduce $n$ to 1. We will record the "Stopping Points", which are positive integers that state how many times the function is run to reduce $n$ to 1.
 
-```{r Chunk1: CollatzCode, error = FALSE, warning = FALSE}
+```{r Chunk1CollatzCode, error = FALSE, warning = FALSE}
 ## We are including this code to demonstrate how the Collatz Conjecture works.
 
 ## Function accepts a positive integer n
@@ -88,7 +86,7 @@ runCollatz <- function(integerN)
 
 What kind of behavior do stopping points exhibit? Let's use a histogram to see the distribution of this part of the Conjecture. We'll analyze positive integers starting with 1 and going up to 10,000, recording their respective stopping points.
 
-```{r Chunk2: stoppingPointsHistogram, echo = FALSE, error = FALSE, warning = FALSE}
+```{r Chunk2stoppingPointsHistogram, echo = FALSE, error = FALSE, warning = FALSE}
 ## This code is included to show a histogram of the Collatz Stopping Points, in order to answer Dr. Hatfield's question
 
 intervalValues <- 1:10000
@@ -130,7 +128,7 @@ How might these properties influence the price of a diamond? We will investigate
 
 Shown below are dot plots that include 100 cases from the Diamonds dataset, with the first (Fig. 1) concerning color and the second (Fig. 2) regarding cut:
 
-```{r Chunk3: diamondsDotPlot1, echo = FALSE, error = FALSE, warning = FALSE}
+```{r Chunk3diamondsDotPlot1, echo = FALSE, error = FALSE, warning = FALSE}
 ## This code was included to show a dot plot of 100 diamonds and the relationship between prices, carat, and color
 
 library(ggplot2)
@@ -144,7 +142,7 @@ theme_minimal()
 
 ```
 
-```{r Chunk4: diamondsDotPlot2, echo = FALSE, error = FALSE, warning = FALSE}
+```{r Chunk4diamondsDotPlot2, echo = FALSE, error = FALSE, warning = FALSE}
 ## This code was included to show a dot plot of 100 diamonds and the relationship between prices, carat, and cut
 
 library(ggplot2)
@@ -171,7 +169,7 @@ First of all, let's discuss the Color and Cut properties. The less color, the hi
 
 We will now use a table to display summary statistics about the Diamonds dataset. This will allow us to examine many more cases compared to the above visualizations. We'll consider the $x$ values for the diamonds in these calculations.
 
-```{r Chunk5: diamondsSummary, echo = FALSE, error = FALSE, warning = FALSE}
+```{r Chunk5diamondsSummary, echo = FALSE, error = FALSE, warning = FALSE}
 ## This code was included to tidy up and display a table regarding the diamonds' physical properties
 
 ##################
