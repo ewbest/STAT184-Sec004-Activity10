@@ -2,7 +2,8 @@
 title: "Analysis of STAT184 Topics"
 author: "Eric Best"
 date: "2023-11-29"
-output: pdf_document
+output:
+  pdf_document: default
 ---
 
 ```{r Chunk0: Portability, echo = FALSE, error = FALSE, warning = FALSE, message = FALSE}
@@ -13,13 +14,14 @@ output: pdf_document
 
 library(groundhog)
 groundhog.day="2023-11-20"
-pkgs=c('janitor','dplyr','kableExtra', 'ggplot2', 'here', 'tinytex')
+pkgs=c('janitor','dplyr','kableExtra', 'ggplot2', 'here')
 groundhog.library(pkgs, groundhog.day)
 knitr::opts_chunk$set(warning = FALSE, message = FALSE)
 ##tinytex::install_tinytex(force = TRUE)
 csv_path <- here("diamonds.csv")
 diamonds <- read.csv(csv_path)
 ##devtools::install_github("kupietz/kableExtra")
+
 ```
 
 ### Foreword
