@@ -6,12 +6,12 @@ output:
   pdf_document: default
 ---
 
-```{r Chunk0: Portability, echo = FALSE, error = FALSE, warning = FALSE, message = FALSE}
+```{r Chunk0Portability, echo = FALSE, error = FALSE, warning = FALSE, message = FALSE}
 ## This chunk's code was included to provide portability to different systems.
 ## We are using groundhog to load packages from a specific date.
 ## We are then using 'here' to load the ggplot2 dataset called diamonds.csv
 ## Diamonds was obtained from: https://github.com/tidyverse/ggplot2/blob/main/data-raw/diamonds.csv
-
+## The github repository for this project is located at: https://github.com/ewbest/STAT184-Sec004-Activity10
 library(groundhog)
 groundhog.day="2023-11-20"
 pkgs=c('janitor','dplyr','kableExtra', 'ggplot2', 'here')
